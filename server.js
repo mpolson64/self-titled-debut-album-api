@@ -29,7 +29,7 @@ app.get('/bandname', function(req, res) {
     });
 });
 
-app.get('genre', function(req, res) {
+app.get('/genre', function(req, res) {
     res.json({
 	genre: genres[Math.floor(Math.random() * genres.length)]
     });
