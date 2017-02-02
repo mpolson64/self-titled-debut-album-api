@@ -1,0 +1,8 @@
+acoustic
+alternative
+blues
+country
+electronic
+hip-hop
+metal
+pop

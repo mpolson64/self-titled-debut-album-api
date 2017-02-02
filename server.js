@@ -1,7 +1,9 @@
 var spawn = require('child_process').spawn;
-
+var fs = require('fs');
 var express = require('express');
 var app = express();
+
+var genres = fs.readFileSync('genres.txt').toString().split('\n');
 
 var router = express.Router();
 
@@ -24,6 +26,12 @@ app.get('/bandname', function(req, res) {
 	res.json({
 	    bandName: dataString.substring(0, dataString.length - 1)
 	});
+    });
+});
+
+app.get('genre', function(req, res) {
+    res.json({
+	genre: genres[Math.floor(Math.random() * genres.length)]
     });
 });
 
