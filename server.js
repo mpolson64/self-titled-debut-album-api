@@ -22,7 +22,7 @@ app.get('/bandname', function(req, res) {
     script.stdout.on('end', function() {
 	console.log(dataString);
 	res.json({
-	    bandName: dataString
+	    bandName: dataString.substring(0, dataString.length - 1)
 	});
     });
 });
