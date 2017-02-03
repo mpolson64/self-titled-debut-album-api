@@ -61,7 +61,7 @@ app.get('/full', function(req, res) {
 	res.json({
 	    bandName: bandName,
 	    genre: genre,
--	    message: message.replace('%GENRE', genre).replace('%BAND', bandName)
+	    message: message.replace('%GENRE', genre).replace('%BAND', bandName)
 	});
     });
 });
