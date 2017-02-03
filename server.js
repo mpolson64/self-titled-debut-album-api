@@ -3,8 +3,8 @@ var fs = require('fs');
 var express = require('express');
 var app = express();
 
-var genres = fs.readFileSync('genres.txt').toString().split('\n');
-var messages = fs.readFileSync('messages.txt').toString().split('\n');
+var genres = fs.readFileSync('genres.txt').toString().split('\n').slice(0, -1);
+var messages = fs.readFileSync('messages.txt').toString().split('\n').slice(0, -1);
 
 var router = express.Router();
 
