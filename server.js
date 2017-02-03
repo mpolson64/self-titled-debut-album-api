@@ -36,6 +36,12 @@ app.get('/genre', function(req, res) {
     });
 });
 
+app.get('/message', function(req, res) {
+    res.json({
+	message: messages[Math.floor(Math.random() * messages.length)]
+    });
+});
+
 app.get('/full', function(req, res) {
     var genre = genres[Math.floor(Math.random() * genres.length)]
 
