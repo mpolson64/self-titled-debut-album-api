@@ -6,6 +6,8 @@ var app = express();
 var genres = fs.readFileSync('genres.txt').toString().split('\n').slice(0, -1);
 var messages = fs.readFileSync('messages.txt').toString().split('\n').slice(0, -1);
 
+var DEFAULT_BAND_NAME = 'Molasses API';
+
 var router = express.Router();
 
 app.get('/', function(req, res) {
@@ -25,7 +27,7 @@ app.get('/bandname', function(req, res) {
     script.stdout.on('end', function() {
 	console.log(dataString);
 	res.json({
-	    bandName: dataString.substring(0, dataString.length - 1)
+	    bandName: dataString.substring(0, dataString.length - 1) || DEFAULT_BAND_NAME
 	});
     });
 });
@@ -57,7 +59,7 @@ app.get('/full', function(req, res) {
 
     script.stdout.on('end', function() {
 	console.log(dataString);
-	bandName = dataString.substring(0, dataString.length - 1);
+	bandName = dataString.substring(0, dataString.length - 1) || DEFAULT_BAND_NAME;
 	res.json({
 	    bandName: bandName,
 	    genre: genre,
