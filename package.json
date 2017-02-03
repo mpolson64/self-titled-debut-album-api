@@ -1,21 +1,22 @@
 {
   "name": "Self-Titled-Debut-Album-API",
-    "version": "1.0.0",
-    "description": "API to generate band names. Ode to the now deactivated Self-Titled-Debut-Album, a mostly annoying Twitter bot",
-    "main": "server.js",
-    "scripts": {
-	"test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-	"type": "git",
-	"url": "https://github.com/mpolson64/Self-Titled-Debut-Album-API.git"
-    },
-    "author": "mpolson64",
-    "license": "ISC",
-    "bugs": {
-	"url": "https://github.com/mpolson64/Self-Titled-Debut-Album-API/issues"
-    },
-    "dependencies": {
-	"express": "^4.14.1"
-    }
+  "version": "1.0.0",
+  "description": "API to generate band names. Ode to the now deactivated Self-Titled-Debut-Album, a mostly annoying Twitter bot",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mpolson64/Self-Titled-Debut-Album-API.git"
+  },
+  "author": "mpolson64",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mpolson64/Self-Titled-Debut-Album-API/issues"
+  },
+  "dependencies": {
+    "cors": "^2.8.1",
+    "express": "^4.14.1"
+  }
 }

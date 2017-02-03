@@ -1,6 +1,7 @@
 var spawn = require('child_process').spawn;
 var fs = require('fs');
 var express = require('express');
+var cors = require('cors');
 var app = express();
 
 var genres = fs.readFileSync('genres.txt').toString().split('\n').slice(0, -1);
@@ -8,7 +9,7 @@ var messages = fs.readFileSync('messages.txt').toString().split('\n').slice(0, -
 
 var DEFAULT_BAND_NAME = 'Molasses API';
 
-var router = express.Router();
+app.use(cors());
 
 app.get('/', function(req, res) {
     res.json({
