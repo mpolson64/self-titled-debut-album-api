@@ -63,5 +63,6 @@ def pluralNounDoubleLetter(apiKey):     #Desiigner
 
 ARCHETYPES = (thePluralNoun, theAdjectiveNouns, theAdjective, pluralNounOfNoun, properNounTheProfession, nounNumber, verbNumber, adjectiveNoun, adjectivePluralNoun, properNounLetterLetterLetter, verbTheNoun, pluralNounDoubleLetter)
 
-print(random.choice(ARCHETYPES)(API_KEY))
-sys.stdout.flush()
+if __name__ == '__main__':
+    print(random.choice(ARCHETYPES)(API_KEY))
+    sys.stdout.flush()
