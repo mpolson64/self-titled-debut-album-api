@@ -1,6 +1,6 @@
 Self-Titled-Debut-Album-API 🎤🖥️🔀
 ========================
-[![Heroku](https://heroku-badge.herokuapp.com/?app=self-titled-debut-album-api&style=flat)](https://self-titled-debut-album-api.herokuapp.com/)
+[![Heroku](https://heroku-badge.herokuapp.com/?app=self-titled-debut-album-api)](https://self-titled-debut-album-api.herokuapp.com/)
 [![Travis-CI](https://api.travis-ci.org/mpolson64/Self-Titled-Debut-Album-API.svg?branch=master)](https://travis-ci.org/mpolson64/Self-Titled-Debut-Album-API)
 [![Coverage Status](https://coveralls.io/repos/github/mpolson64/Self-Titled-Debut-Album-API/badge.svg)](https://coveralls.io/github/mpolson64/Self-Titled-Debut-Album-API)
 
