@@ -5,10 +5,6 @@ import os
 
 API_KEY = os.environ['WORDNIK_API_KEY']
 
-def testFunctions(functions, apiKey):
-    for element in functions:
-        print(element(apiKey))
-
 def getRandomWord(partOfSpeech, apiKey):
     r = requests.get('http://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=true&minCorpusCount=0&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&includePartOfSpeech=' + partOfSpeech + '&api_key=' + apiKey)
     return r.json()['word'].capitalize();
