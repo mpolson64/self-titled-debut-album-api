@@ -1,5 +1,6 @@
 import unittest
 import sys
+import os
 from os import path
 
 sys.path.append( path.dirname( path.dirname( path.abspath(__file__) ) ) )
@@ -7,6 +8,9 @@ sys.path.append( path.dirname( path.dirname( path.abspath(__file__) ) ) )
 import generator
 
 class TestSuite(unittest.TestCase):
+    def test_main(self):
+        result = os.system('python generator.py')
+        self.assertEquals(result, 0)
     def test_get_random_word_success(self):
         self.assertTrue(len(generator.getRandomWord('noun', generator.API_KEY)) != 0)
     def test_get_random_word_fail(self):
