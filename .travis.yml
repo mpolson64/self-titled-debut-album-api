@@ -12,7 +12,7 @@ install:
 
 # command to run tests
 script:
-  - coverage run test/test.py
+  - coverage run --source=generator.py test/test.py
   - npm test
 
 # command to do Coveralls
