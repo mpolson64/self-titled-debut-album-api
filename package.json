@@ -4,7 +4,7 @@
   "description": "API to generate band names. Ode to the now deactivated Self-Titled-Debut-Album, a mostly annoying Twitter bot",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "cors": "^2.8.1",
-    "express": "^4.14.1"
+    "express": "^4.14.1",
+    "mocha": "^3.2.0"
   }
 }

@@ -7,7 +7,7 @@ API_KEY = os.environ['WORDNIK_API_KEY']
 
 def testFunctions(functions, apiKey):
     for element in functions:
-        print element(apiKey)
+        print(element(apiKey))
 
 def getRandomWord(partOfSpeech, apiKey):
     r = requests.get('http://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=true&minCorpusCount=0&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&includePartOfSpeech=' + partOfSpeech + '&api_key=' + apiKey)
@@ -63,5 +63,6 @@ def pluralNounDoubleLetter(apiKey):     #Desiigner
 
 ARCHETYPES = (thePluralNoun, theAdjectiveNouns, theAdjective, pluralNounOfNoun, properNounTheProfession, nounNumber, verbNumber, adjectiveNoun, adjectivePluralNoun, properNounLetterLetterLetter, verbTheNoun, pluralNounDoubleLetter)
 
-print(random.choice(ARCHETYPES)(API_KEY))
-sys.stdout.flush()
+if __name__ == '__main__':
+    print(random.choice(ARCHETYPES)(API_KEY))
+    sys.stdout.flush()
