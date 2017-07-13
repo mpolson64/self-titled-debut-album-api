@@ -5,13 +5,17 @@ import os
 
 API_KEY = os.environ['WORDNIK_API_KEY']
 
-def testFunctions(functions, apiKey):
-    for element in functions:
-        print(element(apiKey))
-
 def getRandomWord(partOfSpeech, apiKey):
     r = requests.get('http://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=true&minCorpusCount=0&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&includePartOfSpeech=' + partOfSpeech + '&api_key=' + apiKey)
     return r.json()['word'].capitalize();
+
+def profession(transitiveVerb):
+    if(transitiveVerb[len(transitiveVerb) - 2] == 'e' and transitiveVerb[len(transitiveVerb) - 1] == 'r'):
+        return transitiveVerb
+    elif(transitiveVerb[len(transitiveVerb) - 1] == 'e'):
+        return transitiveVerb + 'r'
+    else:
+        return transitiveVerb + 'er'
 
 def thePluralNoun(apiKey):   #The Beatles
     return 'The ' + getRandomWord('noun-plural', apiKey);
@@ -26,16 +30,9 @@ def pluralNounOfNoun(apiKey):    #Mates of State
     return getRandomWord('noun-plural', apiKey) + ' of ' + getRandomWord('noun', apiKey)
 
 def properNounTheProfession(apiKey):     #Chance the Rapper
-    profession = ''
     verb = getRandomWord('verb-transitive', apiKey)
-    if(verb[len(verb) - 2] == 'e' and verb[len(verb) - 1] == 'r'):
-        profession = verb
-    elif(verb[len(verb) - 1] == 'e'):
-        profession = verb + 'r'
-    else:
-        profession = verb + 'er'
-
-    return getRandomWord('noun', apiKey) + ' the ' + profession
+    
+    return getRandomWord('noun', apiKey) + ' the ' + profession(verb)
 
 def nounNumber(apiKey):     #Blink-182
     return getRandomWord('noun', apiKey) + '-' + str(random.randint(100, 999))

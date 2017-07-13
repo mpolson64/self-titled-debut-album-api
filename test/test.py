@@ -29,7 +29,12 @@ class TestSuite(unittest.TestCase):
             name = function(generator.API_KEY)
             if(len(name) == 0 or "  " in name):
                passing = False
-        self.assertTrue(passing)
+    def test_profession_append_er(self):
+        self.assertTrue(generator.profession('Sing'), 'Singer')
+    def test_profession_append_r(self):
+        self.assertTrue(generator.profession('Smile'), 'Smiler')
+    def test_profession_append_nothing(self):
+        self.assertTrue(generator.profession('Rapper'), 'Rapper')
 
 if __name__ == '__main__':
     unittest.main();
