@@ -7,6 +7,7 @@ python:
 
 # command to install dependencies
 install:
+  - npm update
   - pip install coveralls
   - pip install requests
 
